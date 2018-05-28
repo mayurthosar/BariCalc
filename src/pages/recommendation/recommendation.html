@@ -1,0 +1,537 @@
+<!--
+  Generated template for the RecommendationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title class="head">Calculations</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content>
+    <ion-list style="margin-bottom: 0px;">
+      <div style="clear: left; background-color:#f6f6f8 !important; padding-left: 10px !important; ">
+        <!-- <p style="float: left; padding : 7px;">
+          <img src="img/icons/recommendation.png" height="90" width="90" border="1px">
+        </p>
+        <ion-label class="my-label" color="about">Calculations</ion-label> -->
+        <ion-grid>
+        <ion-row no-padding no-margin >
+          <ion-col no-padding no-margin>
+            <ion-item no-lines id="rounds" class="itemDesign" style="background-color:#f6f6f8 !important;">
+              <ion-icon item-start style="margin-right: 3px;height:35px;width:30px;">
+                <img src="img/icons/age.png">
+              </ion-icon>
+              <ion-input style="padding-right: 0px; padding-bottom: 4px;" class="item-align" [(ngModel)]="a" name="a" no-margin readonly no-padding></ion-input>
+             </ion-item>
+          </ion-col>
+          <ion-col no-padding no-margin>
+            <ion-item  no-lines id="rounds" class="itemDesign" style="background-color:#f6f6f8 !important;">
+              <ion-icon item-start style="margin-right: 0px; height:25px; width:25px;">
+                <img src="img/icons/height.png" style="height: 30px;">
+              </ion-icon>
+              <p class="item-align" style="color: #000 ;padding-top: 5px;">{{heigh}}</p>
+              <!-- <ion-input style="padding-right: 0px;" class="item-align" [(ngModel)]="heigh" name="heigh" text-wrap no-margin readonly no-padding></ion-input> -->
+            </ion-item>
+          </ion-col>
+         <ion-col no-padding no-margin>
+           <ion-item no-lines id="rounds" class="itemDesign" style="background-color:#f6f6f8 !important;"  text-wrap>
+            <ion-icon item-start style="margin-right: 0px; height:35px; width:35px;">
+              <img src="img/icons/weight.png" style="height: 35px; width: 32px;">
+              </ion-icon>
+              <p class="item-align" style="color: #000">{{weigh}}</p>
+              <p class="item-align" style="color: #000">{{weigh1}}</p>
+           
+          </ion-item>
+          
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+ 
+      
+        
+        <!-- <ion-row style="background-color:#f6f6f8 !important;" no-padding no-margin>
+            <ion-col>
+                <ion-item no-lines no-padding no-margin style="background-color:#f6f6f8 !important;">
+                  <ion-input class="item-align" [(ngModel)]="heigh" name="heigh" no-margin readonly></ion-input>
+                 
+                </ion-item>
+              </ion-col> -->
+          <!-- <ion-col>
+            <ion-item no-lines no-padding no-margin style="background-color:#f6f6f8 !important;">
+              <ion-input class="item-align" [(ngModel)]="weigh" name="weigh" no-margin readonly></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines no-padding no-margin style="background-color:#f6f6f8 !important;">
+              <ion-input class="item-align" [(ngModel)]="a" name="a" no-margin readonly>yrs</ion-input>
+            </ion-item>
+          </ion-col> -->
+          
+        <!-- </ion-row> -->
+      </div>
+      
+    </ion-list>
+    <form style="background-color:#f1f8ff !important;">
+      <ion-list>
+        <ion-item style="background-color:#514f50 !important;" no-lines>
+          <ion-label no-padding no-margin class="heading" color="primary">BMI & other details</ion-label>
+        </ion-item>
+        <ion-row no-padding no-margin>
+          <ion-col style="padding-left:5px; padding-bottom: 0px;" no-margin>
+            <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+              <ion-label color="about" class="head" text-wrap style="padding-left:10px !important;padding-top: 3px;height: 73px;">BMI (WHO Classification): <button ion-button clear icon-only class="infoBlueButton"  type="button" (click)="isBmiShown = !isBmiShown" >
+                <ion-icon name="information-circle" style="
+                padding-left: 2px;
+                padding-right: 5px;
+                padding-bottom: 7px; font-size:1.7em"></ion-icon>
+              </button>
+           </ion-label>
+            </ion-item>
+           </ion-col>
+          <ion-col no-padding no-margin>
+            <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important; padding-left:5px !important;">
+              <ion-input no-margin  style="padding-left:5px !important;" [(ngModel)]="bminclass" name="bminclass" readonly></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row style="border-bottom: 1px solid #bfbfbf !important;">
+        <div class="color-boxes" [ngClass]="{'show': isBmiShown}" style="background-color:#ffffff !important;" >
+          <p style="padding-left:10px !important; margin-top:0px; margin-bottom:0px;" class="my-ques">World Health Organization classification of obesity.</p>
+          <ion-grid>
+              <ion-row style="border-bottom: 1px solid #bfbfbf !important; " >
+                <ion-col col-8 col-sm class="my-ques">
+                  Body mass index; kg.m<sup>2</sup>
+                </ion-col>
+                <ion-col col-4 col-sm style="font-size: 12px !important; font-family: 'MontSerratBold'; font-weight: bolder;">
+                  Classification
+                </ion-col>
+              </ion-row>
+              <ion-row style="border-bottom: 1px solid #bfbfbf !important;" class="my-quess">  
+                  <ion-col col-8 col-sm>
+                     < 18.5
+                  </ion-col>
+                  <ion-col col-4 col-sm>
+                    Underweight
+                  </ion-col>
+                </ion-row>
+                <ion-row style="border-bottom: 1px solid #bfbfbf !important;" class="my-quess">
+                    <ion-col col-8 col-sm>
+                      18.5-24.9
+                    </ion-col>
+                    <ion-col col-4 col-sm>
+                      Normal
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="border-bottom: 1px solid #bfbfbf !important;" class="my-quess">
+                      <ion-col col-8 col-sm>
+                        25.0-29.9
+                      </ion-col>
+                      <ion-col col-4 col-sm>
+                        overweight
+                      </ion-col>
+                    </ion-row>
+                    <ion-row style="border-bottom: 1px solid #bfbfbf !important;" class="my-quess">
+                        <ion-col col-8 col-sm>
+                         30.0-34.9
+                        </ion-col>
+                        <ion-col col-4 col-sm>
+                          Obese 1
+                        </ion-col>
+                      </ion-row>
+                      <ion-row style="border-bottom: 1px solid #bfbfbf !important;" class="my-quess">
+                          <ion-col col-8 col-sm>
+                            35.0-39.9
+                          </ion-col>
+                          <ion-col col-4 col-sm>
+                              Obese 2
+                          </ion-col>
+                        </ion-row>
+                        <ion-row class="my-quess">
+                            <ion-col col-8 col-sm>
+                               >40.0
+                            </ion-col>
+                            <ion-col col-4 col-sm>
+                                Obese 3 (previously 'morbid obesity')
+                            </ion-col>
+                          </ion-row>
+            </ion-grid>
+              <!-- <ion-col no-margin>
+                <img src="img/icons/bmi.png" style ="height: 150px;width: 280px;padding-left: 0px;margin-left: 10px;">
+                </ion-col> -->
+        </div>
+      </ion-row>
+         <ion-row >
+          <ion-col style="padding-left:5px;padding-bottom: 0px;" no-margin>
+            <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+              <ion-label color="about" class="head" text-wrap style="padding-left:10px !important; padding-top: 3px;">Ideal Body Weight (IBW):
+                <button ion-button clear icon-only class="infoBlueButton"  type="button" (click)="isIbwShown = !isIbwShown" >
+                  <ion-icon name="information-circle" style="
+                  padding-left: 2px;
+                  padding-right: 5px;
+                  padding-bottom: 7px; font-size:1.7em"></ion-icon>
+                </button>
+              </ion-label>
+              <!-- <button ion-button clear color="about" (click)="isIbwShown = !isIbwShown" style="height:23px;padding-left:10px !important; margin:0px;font-size:13px;font-family: 'MontserratBold';text-transform: none;">Ideal Body Weight (IBW):</button> -->
+            </ion-item>
+            </ion-col>
+          <ion-col no-margin style="padding-top:3px !important;">
+            <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+              <ion-input placeholder="Ideal Body Weight" [(ngModel)]="IBW1" name="IBW1" readonly></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+         <ion-row style="border-bottom: 1px solid #bfbfbf !important;">
+        <div class="color-boxes" [ngClass]="{'show': isIbwShown}" style="background-color:#ffffff !important;" >
+            <p style="padding-left:10px !important; margin-top:0px; margin-bottom:0px;" class="my-quess">What the patient should weigh with a normal ratio of lean to fat mass.Varies with age, and is usually approximated to a function of height and sex:<br>
+              <br>IBW(kg)= height(cm) - X <br>
+              <br>(where x=105 in females and 100 in males) 
+            </p>
+           <!-- <ion-col no-margin>
+              <img src="img/icons/IBW.jpg" style ="height: 50px;width: 298px;padding-left: 0px;margin-left: 8px;">
+              </ion-col> -->
+        </div>
+    </ion-row>
+        <ion-row >
+            <ion-col style="padding-left:5px;padding-bottom: 0px;" no-margin>
+              <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+                <ion-label color="about" class="head" text-wrap style="padding-left:10px !important; padding-top: 3px;">Adjusted Body Weight (ABW):
+                  <button ion-button clear icon-only class="infoBlueButton"  type="button" (click)="isAbwShown = !isAbwShown" >
+                    <ion-icon name="information-circle" style="
+                    padding-left: 2px;
+                    padding-right: 5px;
+                    padding-bottom: 7px; font-size:1.7em"></ion-icon>
+                  </button>
+                </ion-label>
+                <!-- <button ion-button clear color="about"  (click)="isAbwShown = !isAbwShown" style="height:23px;padding-left:10px !important; margin:0px;font-size:12.5px;font-family: 'MontserratBold';text-transform: none;">Adjusted Body Weight (ABW):</button> -->
+              </ion-item>
+              </ion-col>
+            <ion-col no-margin style="padding-top:3px !important;">
+              <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+                <ion-input placeholder="Adjust Body Weight" [(ngModel)]="ABW1" name="ABW1" readonly></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row style="border-bottom: 1px solid #bfbfbf !important;">
+              <div class="color-boxes" [ngClass]="{'show': isAbwShown}" style="background-color:#ffffff !important;" >
+                  <p style="padding-left:10px !important; margin-top:0px; margin-bottom:0px;" class="my-quess">Takes into account the fact that obese individuals have increased lean body mass and an increased volume of distributionfor drugs.It is calculated by adding 40% of excess weight to the IBW:<br>
+                   <br> ABW(kg)= IBW(kg) + 0.4 (TBW(kg) - IBW(kg))<br>
+                  </p>
+                <!-- <ion-col no-margin>
+                  <img src="img/icons/abw.png" style ="height:40px;width:298px; margin-left:10px;">
+                  </ion-col> -->
+                </div>
+            </ion-row>
+            <ion-row>
+              <ion-col style="padding-left:5px;padding-bottom: 0px;" no-margin>
+                <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+                  <ion-label color="about" class="head" text-wrap style="padding-left:10px !important;padding-top: 3px;">Lean Body Weight (LBW):
+                      <button ion-button clear icon-only class="infoBlueButton" style="padding-top: 4px !important;"  type="button" (click)="isLbwShown = !isLbwShown" >
+                    <ion-icon name="information-circle" style="
+                    padding-left: 2px;
+                    padding-right: 5px;
+                    padding-bottom: 7px; font-size:1.7em"></ion-icon>
+                  </button>
+                  </ion-label>
+                  <!-- <button ion-button clear color="about"  (click)="isLbwShown = !isLbwShown" style="height:23px;padding-left:10px !important; margin:0px;font-size:13px;font-family: 'MontserratBold';text-transform: none;">Lean Body Weight (LBW):</button> -->
+                </ion-item>
+                
+              </ion-col>
+              <ion-col no-margin style="padding-top:3px !important; " >
+                <ion-item no-lines no-padding no-margin style="background-color:#f1f8fe !important;">
+                  <ion-input placeholder="Lean Body Weight" [(ngModel)]="LBW1" name="LBW1" readonly></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row style="border-bottom: 1px solid #bfbfbf !important;">
+                <div class="color-boxes" [ngClass]="{'show': isLbwShown}" style="background-color:#ffffff !important;" >
+                    <p class = "my-quess" style="padding-left:10px !important; margin-top:0px; margin-bottom:0px;" class="my-quess">
+                        The patient's weight excluding fat. Many of the formulae for calculating lean body weight are complex but one of the most widely used is that of Janmahasatian et al:<br>
+                    </p>
+                    <p class = "my-quess" style="text-align:center; margin-bottom: 0px;" >LBW(kg)(For men):</p><br>
+                    <p class = "my-quess" style="text-align:center; margin-top: 0px;margin-bottom: 0px;">9270 x TBW(kg)</p>
+                    <hr style="width:50%; height:1px;border:none;color:#333;background-color:#333;margin-top: 0px;margin-bottom: 0px;">
+                    <p class = "my-quess" style="text-align:center; margin-top: 0px;margin-bottom: 0px;">6680 + (216 x BMI(kg.m<sup>2</sup>))</p><br>
+
+                    <p class = "my-quess" style="text-align:center; margin-bottom: 0px;" >LBW(kg)(For women):</p><br>
+                    <p class = "my-quess" style="text-align:center; margin-top: 0px;margin-bottom: 0px;">9270 x TBW(kg)</p>
+                    <hr style="width:50%; height:1px;border:none;color:#333;background-color:#333;margin-top: 0px;margin-bottom: 0px;">
+                    <p class = "my-quess" style="text-align:center; margin-top: 0px;margin-bottom: 0px;">8780 + (244 x BMI(kg.m<sup>2</sup>))</p>
+                    <p class = "my-quess" style="padding-left:10px !important; margin-top:12px; margin-bottom:0px;">Regardless of total body weight, lean body weight rarely exceeds 100 kg in men and 70 kg in women.</p> 
+                  </div>
+                  
+              </ion-row>
+           
+        <ion-item style="background-color:#514f50 !important;" no-lines>
+          <ion-label no-padding no-margin class="heading" color="primary" style="padding-top: 6px; padding-bottom: 6px">Drugs Dosages based on LBW:
+            <ion-label text-wrap style="font-size:10px !important; padding:0px; margin-top:3px;margin-bottom: 3px;">(Suggested initial dosing scalars for commonly used anaesthetic drugs for healthy obese adults (not- withstanding the fact that titration to a suitable end- point may be necessary)
+        </ion-label></ion-label>
+        </ion-item>
+        <div style="clear: left; background-color:#f1f8fe !important;">
+          <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Propofol (induction):</p>
+          <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p><br>
+          <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+          <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="propofol" name="propofol" placeholder="Dosage in mg/kg" readonly>
+          </ion-input></ion-item>
+      </div>
+      <div style="clear: left; background-color:#f1f8fe !important;">
+        <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Thiopental:</p>
+        <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+        <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+        <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="thiopental" name="thiopental" placeholder="Dosage in mg/kg" readonly>
+        </ion-input></ion-item>
+    </div>
+    <div style="clear: left; background-color:#f1f8fe !important;">
+      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Fentanyl:</p>
+      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="fentanyl" name="fentanyl" placeholder="Dosage in mg/kg" readonly>
+      </ion-input></ion-item>
+  </div>
+  <div style="clear: left; background-color:#f1f8fe !important;">
+    <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Rocuronium:</p>
+    <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+    <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+    <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="rocuronium" name="rocuronium" placeholder="Dosage in mg/kg" readonly>
+    </ion-input></ion-item>
+</div>
+<div style="clear: left; background-color:#f1f8fe !important;">
+  <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Atracurium:</p>
+  <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+  <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+  <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="atracurium" name="atracurium" placeholder="Dosage in mg/kg" readonly>
+  </ion-input></ion-item>
+</div>
+<div style="clear: left; background-color:#f1f8fe !important;">
+  <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Vecuronium:</p>
+  <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+  <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+  <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="vecuronium" name="vecuronium" placeholder="Dosage in mg/kg" readonly>
+  </ion-input></ion-item>
+</div>
+<div style="clear: left; background-color:#f1f8fe !important;">
+  <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Morphine:</p>
+  <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+  <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+  <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="morphine" name="morphine" placeholder="Dosage in mg/kg" readonly>
+  </ion-input></ion-item>
+</div>
+<div style="clear: left; background-color:#f1f8fe !important;">
+  <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Paracetamol:</p>
+  <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+  <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+  <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="paracetamol" name="paracetamol" placeholder="Dosage in mg/kg" readonly>
+  </ion-input></ion-item>
+</div>
+<div style="clear: left; background-color:#f1f8fe !important;">
+  <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Bupivacain:</p>
+  <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+  <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+  <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="bupivacain" name="bupivacain" placeholder="Dosage in mg/kg" readonly>
+  </ion-input></ion-item>
+</div>
+<div style="clear: left; background-color:#f1f8fe !important;">
+  <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Lidocaine:</p>
+  <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>LBW: {{LBW1}}</p>
+  <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+  <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="lignocaine" name="lignocaine" placeholder="Dosage in mg/kg" readonly>
+  </ion-input></ion-item>
+</div>
+                    <ion-item style="background-color:#514f50 !important;" no-lines>
+                      <ion-label no-padding no-margin class="heading" color="primary" style="padding-top: 6px; padding-bottom: 6px">Drugs Dosages based on ABW:
+                        <ion-label text-wrap style="font-size:10px !important; padding:0px; margin-top:3px;margin-bottom: 3px;">(Suggested initial dosing scalars for commonly used anaesthetic drugs for healthy obese adults (not- withstanding the fact that titration to a suitable end- point may be necessary)</ion-label></ion-label>
+                    </ion-item>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Propofol (infusion) :</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>ABW: {{ABW1}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;"  placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Antibiotics :</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>ABW: {{ABW1}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;"  placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Low molecular<br> weight heparin:</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>ABW: {{ABW1}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;"  placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Alfentanil:</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>ABW: {{ABW1}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;"  placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Neostigmine<br> (maximum 5 mg):</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>ABW: {{ABW1}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;"  placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Sugammadex:</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>ABW: {{ABW1}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;"  placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                   
+                    <ion-item style="background-color:#514f50 !important;" no-lines>
+                      <ion-label no-padding no-margin class="heading" color="primary" style="padding-top: 6px; padding-bottom: 6px">Drugs Dosages based on TBW:
+                      <ion-label text-wrap style="font-size:10px !important; padding:0px; margin-top:3px;margin-bottom: 3px;">(Suggested initial dosing scalars for commonly used anaesthetic drugs for healthy obese adults (not- withstanding the fact that titration to a suitable end- point may be necessary)</ion-label></ion-label>
+                    </ion-item>
+                    <div style="clear: left; background-color:#f1f8fe !important;">
+                      <p style="float: left;margin-left: 17px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>Suxamethonium:</p>
+                      <p style="float: right;margin-right: 10px;margin-top: 13px;margin-bottom: 14px;" class="my-font" no-padding no-margin>TBW: {{weigh2}}</p>
+                      <ion-item style="background-color:#d5d5d5 !important; padding-left: 0px;">
+                      <ion-input type="text" class="my-font"  color="primary" style="margin-left: 10px;" [(ngModel)]="suxamethonium" name="suxamethonium" placeholder="Dosage in mg/kg" readonly>
+                      </ion-input></ion-item>
+                    </div>
+                   
+          <ion-item style="background-color:#514f50 !important;" no-lines>
+          <ion-label no-padding no-margin class="heading" color="primary">Risk of Mortality & class: <button ion-button clear icon-only class="infoButton"  type="button" (click)="isRiskShown = !isRiskShown" >
+            <ion-icon name="information-circle" style="
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 7px; font-size:1.7em"></ion-icon>
+          </button></ion-label>
+          <!-- <button ion-button clear color="primary" class="heading" (click)="isRiskShown = !isRiskShown" style="font-size: 1.4rem;text-transform: none;padding:0px; margin:0px;">Risk of Mortality & class:</button> -->
+         
+        </ion-item>
+        <div class="color-boxes" [ngClass]="{'show': isRiskShown}" style="background-color:#ffffff ;" >
+            <p style="padding-left:10px !important; margin-top:0px; margin-bottom:0px;" class="my-ques">The Obesity Surgery Mortality Risk Stratification score(a) risk factors; (b) risk of mortality:<br>
+             </p>
+             <ion-grid >
+                <ion-row style="background-color:#d5d5d5 !important;" class="my-ques">
+                  <ion-col col-9 col-sm>
+                   Risk factor
+                  </ion-col>
+                  <ion-col col-3 col-sm>
+                   Score 
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-9 col-sm class="my-quess">
+                      (a)
+                    </ion-col>
+                    <ion-col col-3 col-sm>
+                     </ion-col>
+                  </ion-row>
+                  <ion-row class="my-quess">
+                      <ion-col col-9 col-sm>
+                        BMI > 50 kg.m<sup>2</sup>
+                      </ion-col>
+                      <ion-col col-3 col-sm>
+                       1
+                      </ion-col>
+                    </ion-row>
+                    <ion-row class="my-quess">
+                        <ion-col col-9 col-sm>
+                         Male
+                        </ion-col>
+                        <ion-col col-3 col-sm>
+                         1
+                        </ion-col>
+                      </ion-row>
+                      <ion-row class="my-quess">
+                          <ion-col col-9 col-sm>
+                           Age > 45 years
+                          </ion-col>
+                          <ion-col col-3 col-sm>
+                            1
+                          </ion-col>
+                        </ion-row>
+                        <ion-row class="my-quess">
+                            <ion-col col-9 col-sm>
+                             Hypertension
+                            </ion-col>
+                            <ion-col col-3 col-sm>
+                                1
+                            </ion-col>
+                          </ion-row>
+                          <ion-row class="my-quess">
+                              <ion-col col-9 col-sm>
+                                 Risk factors for pulmonary embolism:<br>
+                                 Previous venous thromboembolism<br>
+                                 Vana canal filter<br>
+                                 Hypoventilation (sleep-disordered breathing)<br>
+                                 Pulmonary hypertension
+                              </ion-col>
+                              <ion-col col-3 col-sm>
+                                  1
+                              </ion-col>
+                            </ion-row>
+                            <ion-row style="background-color:#d5d5d5 !important;">
+                                <ion-col col-8 col-sm></ion-col>
+                                <ion-col col-4 col-sm class="my-ques">
+                                    Risk of 
+                                    mortality
+                                </ion-col>
+                              </ion-row>
+                              <ion-row class="my-quess">
+                                  <ion-col col-8 col-sm>
+                                  (b)
+                                  </ion-col>
+                                  <ion-col col-4 col-sm>
+                                      
+                                  </ion-col>
+                                </ion-row>
+                                <ion-row class="my-quess">
+                                    <ion-col col-8 col-sm>
+                                     Class A: 0-1 points 
+                                    </ion-col>
+                                    <ion-col col-4 col-sm>
+                                        0.2-0.3%
+                                    </ion-col>
+                                  </ion-row>
+                                  <ion-row class="my-quess">
+                                      <ion-col col-8 col-sm>
+                                       Class B: 2-3 points
+                                      </ion-col>
+                                      <ion-col col-4 col-sm>
+                                          1.1-1.5%
+                                      </ion-col>
+                                    </ion-row>
+                                    <ion-row class="my-quess">
+                                        <ion-col col-8 col-sm>
+                                         Class C: 4-5 points
+                                        </ion-col>
+                                        <ion-col col-4 col-sm>
+                                            2.4-3.0%
+                                        </ion-col>
+                                      </ion-row>
+                            
+              </ion-grid>
+            <!-- <img src="img/icons/risk.png" center style ="height: 220px;width: 250px;margin-left: 25px;"> -->
+          </div>
+        <div style="clear: left;">
+          <p style="float: left; padding-left: 16px !important;" class="my-font">Risk of Mortality</p>
+          <p style="float: right; padding-right: 10px;" class="my-font"> Risk of Mortality Class </p>
+          <ion-item style="background: #d5d5d5 !important;" no-lines>
+            <ion-input [(ngModel)]="riskMortality" name="riskMortality" class="my-font" readonly></ion-input>
+            <ion-input no-padding no-margin type="text" [(ngModel)]="riskFactorClass" name="riskFactorClass" readonly color="primary"
+            placeholder="Dosage in mg/kg" class="align-items-end my-font" style="padding-left: 15px;" readonly></ion-input>
+          </ion-item>
+  
+        </div>
+  
+      </ion-list>
+    
+    </form>
+  </ion-content>
+  <ion-footer>
+    <div text-center style="background-color: #ffffff;">
+      <button ion-button class="name" clear style="text-transform: none;" color="about" (click)="about()">About BariCalc</button>
+    </div>
+  </ion-footer>

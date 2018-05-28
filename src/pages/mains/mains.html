@@ -1,0 +1,328 @@
+<!--
+  Generated template for the MainsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-navbar>
+    <ion-title class="my-font">BariCalc</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<form  (ngSubmit)="logForm()">
+    <ion-list>
+            <ion-grid item-content no-padding>
+                        <div style="clear: left;">
+                                        <p style="float: left;" ><img src="img/icons/heightNew.png" height="55" width="55" border="1px"></p>
+                                        <ion-label class="my-label" color="about">Height:</ion-label>
+                                         <ion-row>
+                                              <ion-col>
+                                                <ion-item no-lines id="rounds" class="itemDesign" >
+                                                  <ion-input style="border-right: 1px ridge #696969 !important; width:60%" type="number" required class="my-font" placeholder="Enter Height" [(ngModel)]="todo.heigh" name="heigh"></ion-input>
+                                                   <ion-select style="width:40%" placeholder="meter" class="my-font">
+                                                    <ion-option value="cm" (ionSelect)="heightUnit('cm')">centimeter</ion-option>
+                                                    <ion-option value="inches" (ionSelect)="heightUnit('inches')">inches</ion-option>
+                                                    <ion-option value="meter" (ionSelect)="heightUnit('meter')">meter</ion-option>
+                                                    <ion-option value="ftinch" (ionSelect)="heightUnit('ftinch')">feet inches</ion-option>
+                                                    </ion-select>
+                                                </ion-item>
+                                                </ion-col>
+                                            </ion-row>
+                                        </div>
+                                    <div style="clear: left;">
+                                                <p style="float: left;" ><img src="img/icons/weightNew.png" height="55" width="55" border="1px"></p>
+                                                <ion-label class="my-label" color="about">Weight:</ion-label>
+                                                <ion-row>
+                                                  <ion-col style="padding-left: 7px !important;">
+                                                    <ion-item no-lines class="itemDesign" id="rounds"  >
+                                                      <ion-input style="border-right: 1px ridge #696969 !important; width:60%" type="number" class="my-font"  placeholder="Enter Weight" [(ngModel)]="todo.weigh" name="weigh"></ion-input>
+                                                        <ion-select style="width:40%" placeholder="kilogram" class="my-font">
+                                                          <ion-option value="kg"      (ionSelect)="weigh('kg')">kilogram</ion-option>
+                                                          <ion-option value="pounds"  (ionSelect)="weigh('pounds')">pounds</ion-option>
+                                                          <ion-option value="stones"  (ionSelect)="weigh('stones')">stones</ion-option>
+                                                          </ion-select>
+                                                    </ion-item>
+                                                  </ion-col>
+                                                </ion-row>
+                                            </div>
+                                            <div style="clear: left;">
+                                                        <p style="float: left;" class="iconMargin"><img src="img/icons/genderNew.png" height="55" width="54" border="1px"></p>
+                                                        <ion-label class="my-label" color="about">Gender:</ion-label>
+                                                          <ion-row radio-group >
+                                                                <ion-col no-padding no-margin>
+                                                                      <ion-item no-lines class="radioBackground" style="width: 105px !important;">
+                                                                        <ion-label class="my-font" style="width: 85px !important;">Male</ion-label>
+                                                                        <ion-radio value="male" (ionSelect)="user('male')"></ion-radio>
+                                                                      </ion-item>
+                                                                    </ion-col>
+                                                                    <ion-col no-padding no-margin>
+                                                                      <ion-item no-lines class="radioBackground" >
+                                                                       <ion-label class="my-font">Female</ion-label>
+                                                                        <ion-radio value="female" (ionSelect)="user('female')"></ion-radio>
+                                                                      </ion-item>
+                                                                    </ion-col>
+                                                                  </ion-row>
+                                                    </div>
+                                                    <div style="clear: left;">
+                                                                <p style="float: left;"><img src="img/icons/ageNew.png" height="55" width="55" border="1px"></p>
+                                                                <ion-label class="my-label" color="about" style="margin-bottom:5px !important;">Age:</ion-label>
+                                                                <input type="number" class="my-font" name="age" id="rounded" [(ngModel)]="todo.age" placeholder="Enter Age in yrs">
+                                                            </div>
+                                                            <div style="clear: left;" >
+                                                                        <p style="float: left;"  class="iconMargin"><img src="img/icons/hypertensionNew.png" height="58" width="54" border="1px"></p>
+                                                                        <ion-label class="my-label" color="about">Has Hypertension?</ion-label>
+                                                                       
+                                                                        <ion-row radio-group class="space">
+                                                                                <ion-col no-padding no-margin>
+                                                                                      <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                                                                        <ion-label class="my-font">Yes</ion-label>
+                                                                                        <ion-radio value="yes"  (ionSelect)="hypert('yesHyper')"></ion-radio>
+                                                                                      </ion-item>
+                                                                                    </ion-col>
+                                                                                    <ion-col no-padding no-margin>
+                                                                                      <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                                                                       <ion-label class="my-font">No</ion-label>
+                                                                                        <ion-radio value="no" (ionSelect)="hypert('noHyper')"></ion-radio>
+                                                                                      </ion-item>
+                                                                                    </ion-col>
+                                                                                  </ion-row>
+                                            </div>
+                                    
+                        </ion-grid>
+                        
+       <div id="ifYes" style="display:none">
+                        <ion-item text-wrap no-lines style="background-color : #56ace0 !important">
+                          <ion-label class="my-font" style="margin-bottom: 0px !important">Do you want OS-MRS ?<button ion-button clear icon-only class="infoButton" type="button" tooltip="tooltip without position" arrow positionV="bottom" positionH="right" >
+                            <ion-icon name="information-circle" style="
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            padding-bottom: 7px; font-size:1.7em"></ion-icon>
+                          </button></ion-label>
+                          <ion-checkbox color="calculate" (click)="isChecked = !isChecked" item-width="80px"></ion-checkbox>
+                          </ion-item>
+                          <div class="color-boxes" [ngClass]="{'show': isChecked}">
+                            <ion-list>
+                                    <ion-item text-wrap no-lines class="radioBackground" style="height: 38px;" >
+                                        <p class="my-font" style="color:#000"><b>1) Has previous venous thromboembolism?</b></p>
+                                    </ion-item>
+                                  <ion-row radio-group>
+                                <ion-col no-padding no-margin class="colDesign">
+                                      <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                        <ion-label class="my-font">Yes</ion-label>
+                                        <ion-radio value="yes" (ionSelect)="thrombo('yesThrombo')"></ion-radio>
+                                      </ion-item>
+                                    </ion-col>
+                                    <ion-col no-padding no-margin class="colDesignRight">
+                                      <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                       <ion-label class="my-font">No</ion-label>
+                                        <ion-radio value="no" (ionSelect)="thrombo('noThrombo')"></ion-radio>
+                                      </ion-item>
+                                    </ion-col>
+                                  </ion-row>
+                                  <ion-item text-wrap no-lines class="radioBackground" style="height: 38px;" >
+                                        <p class="my-font" style="color:#000"><b>2) Has vana canal filter?</b></p>
+                                  </ion-item>
+                                    <ion-row radio-group>
+                                  <ion-col no-padding no-margin class="colDesign">
+                                        <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                          <ion-label class="my-font">Yes</ion-label>
+                                          <ion-radio value="yes" (ionSelect)="canal('yesCanal')"></ion-radio>
+                                        </ion-item>
+                                      </ion-col>
+                                      <ion-col no-padding no-margin>
+                                        <ion-item no-lines class="colDesignRight" style="width: 85px !important;">
+                                         <ion-label class="my-font">No</ion-label>
+                                          <ion-radio value="no" (ionSelect)="canal('noCanal')"></ion-radio>
+                                        </ion-item>
+                                      </ion-col>
+                                    </ion-row>
+                                    <ion-item text-wrap no-lines class="radioBackground" style="height: 38px;">
+                                            <p class="my-font" style="color:#000"><b>3) Has hypoventilation(sleep-disordered breathing)?</b></p>
+                                          </ion-item>
+                                        <ion-row radio-group>
+                                      <ion-col class="colDesign" no-padding no-margin>
+                                            <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                              <ion-label class="my-font">Yes</ion-label>
+                                              <ion-radio value="yes" (ionSelect)="hypoventilation('yesHypo')"></ion-radio>
+                                            </ion-item>
+                                          </ion-col>
+                                          <ion-col class="colDesignRight" no-padding no-margin >
+                                            <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                             <ion-label class="my-font">No</ion-label>
+                                              <ion-radio value="no" (ionSelect)="hypoventilation('noHypo')"></ion-radio>
+                                            </ion-item>
+                                          </ion-col>
+                                        </ion-row>
+                                        <ion-item text-wrap no-lines class="radioBackground" style="height: 38px;">
+                                                <p class="my-font" style="color:#000"><b>4) Has pulmonary hypertension?</b></p>
+                                              </ion-item>
+                                            <ion-row radio-group>
+                                          <ion-col class="colDesign" no-padding no-margin>
+                                                <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                                  <ion-label class="my-font">Yes</ion-label>
+                                                  <ion-radio value="yes" (ionSelect)="pulHyper('yesPulHyper')"></ion-radio>
+                                                </ion-item>
+                                              </ion-col>
+                                              <ion-col class="colDesignRight" no-padding no-margin>
+                                                <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                                 <ion-label class="my-font">No</ion-label>
+                                                  <ion-radio value="no" (ionSelect)="pulHyper('noPulHyper')"></ion-radio>
+                                                </ion-item>
+                                              </ion-col>
+                                            </ion-row>
+                                            
+                                </ion-list>
+                            </div>
+      <ion-item text-wrap no-lines style="background-color : #56ace0 !important" class="setMarginTop">
+          <ion-label class="my-font" >Do you want STOP-BANG for Obstructive Age?</ion-label>
+          <ion-checkbox color="calculate" (click)="isActive = !isActive" item-width="80px"></ion-checkbox>
+          </ion-item>
+          <div class="color-boxes" [ngClass]="{'show': isActive}">
+                <ion-list>
+                        <ion-item text-wrap no-lines class="radioBackground">
+                          <ion-avatar item-start>
+                            <img src="img/icons/snoaring.png">
+                          </ion-avatar>
+                          <p class="my-font" style="color:#000"><b>Do you snore loudly(louder than talking or heard through a closed door)?</b></p>
+                        </ion-item>
+                      <ion-row radio-group>
+                    <ion-col class="colDesign">
+                          <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                            <ion-label class="my-font">Yes</ion-label>
+                            <ion-radio value="yes" (ionSelect)="snore('yesSnore')"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col class="colDesignRight"> 
+                          <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                           <ion-label class="my-font">No</ion-label>
+                            <ion-radio value="no" (ionSelect)="snore('noSnore')"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                      <!-- <ion-item text-wrap no-lines class="radioBackground">
+                        <ion-avatar item-start>
+                          <img src="img/icons/sleeping.png">
+                        </ion-avatar>
+                        <p class="my-font">Do you fall asleep in daytime?</p>
+                      </ion-item>
+                    <ion-row radio-group>
+                  <ion-col class="colDesign">
+                        <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                          <ion-label class="my-font">Yes</ion-label>
+                          <ion-radio value="yes" (ionSelect)="asleep('yesAsleep')"></ion-radio>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col class="colDesignRight">
+                        <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                         <ion-label class="my-font">No</ion-label>
+                          <ion-radio value="no" (ionSelect)="asleep('noAsleep')"></ion-radio>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row> -->
+                      <ion-item text-wrap no-lines class="radioBackground">
+                            <ion-avatar item-start >
+                              <img src="img/icons/sleeping.png">
+                            </ion-avatar>
+                            <p class="my-font" style="color:#000"><b>Do you often feel tired, fatigued or sleepy during the daytime?</b></p>
+                          </ion-item>
+                        <ion-row radio-group>
+                      <ion-col class="colDesign">
+                            <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                              <ion-label class="my-font" >Yes</ion-label>
+                              <ion-radio value="yes" (ionSelect)="tired('yesTired')"></ion-radio>
+                            </ion-item>
+                          </ion-col>
+                          <ion-col class="colDesignRight">
+                            <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                             <ion-label class="my-font">No</ion-label>
+                              <ion-radio value="no" (ionSelect)="tired('noTired')"></ion-radio>
+                            </ion-item>
+                          </ion-col>
+                        </ion-row>
+                     
+                            <ion-item text-wrap no-lines class="radioBackground">
+                                    <ion-avatar item-start>
+                                      <img src="img/icons/breathe.png">
+                                    </ion-avatar>
+                                    <p class="my-font" style="color:#000"><b>Has anyone observed you stop breathing or choking or gasping during your sleep?</b></p>
+                                  </ion-item>
+                                <ion-row radio-group>
+                              <ion-col class="colDesign">
+                                    <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                      <ion-label class="my-font">Yes</ion-label>
+                                      <ion-radio value="yes" (ionSelect)="choking('yesChoking')"></ion-radio>
+                                    </ion-item>
+                                  </ion-col>
+                                  <ion-col class="colDesignRight">
+                                    <ion-item no-lines class="radioBackground" style="width: 85px !important;">
+                                     <ion-label class="my-font">No</ion-label>
+                                      <ion-radio value="no" (ionSelect)="choking('noChoking')"></ion-radio>
+                                    </ion-item>
+                                  </ion-col>
+                                </ion-row>
+                                <ion-item text-wrap no-lines class="radioBackground" style="height: 44px;">
+                                  <ion-avatar item-start>
+                                    <img src="img/icons/hypertension.png">
+                                  </ion-avatar>
+                                  <p class="my-font" style="color:#000"><b>Are you being treated for high blood pressure?</b></p>
+                                  </ion-item>
+                                <ion-item no-lines class="radioBackground" style="padding-left: 62px;">
+                                <ion-input class="my-font" type="text" value="Yes" readonly></ion-input>
+                                </ion-item>
+                                <ion-item text-wrap no-lines class="radioBackground">
+                                  <ion-avatar item-start>
+                                    <img src="img/icons/calculator.png" >
+                                  </ion-avatar>
+                                  <ion-label class="my-font" style="color:#000"><b>BMI:</b></ion-label>
+                                  <ion-input class="my-font" type="text" [(ngModel)]="bmi" name="bmi" placeholder="" readonly></ion-input>
+                                  </ion-item>
+                                <ion-item text-wrap no-lines class="radioBackground">
+                                  <ion-avatar item-start>
+                                    <img src="img/icons/age.png">
+                                  </ion-avatar>
+                                  <ion-label class="my-font" style="color:#000"><b>Age:</b></ion-label>
+                                    <ion-input class="my-font" type="text" [(ngModel)]="todo.age" name="age" readonly></ion-input>
+                                  </ion-item>
+                               
+                                <ion-item text-wrap no-lines class="radioBackground">
+                                        <ion-avatar item-start>
+                                          <img src="img/icons/neckcircum.png">
+                                        </ion-avatar>
+                                        <p class="my-font" style="color:#000"><b>Neck Circumference?</b></p>
+                                        </ion-item>
+                                      <ion-item class="radioBackground" id="rounds" style="padding-left: 0px; margin-left: 62px;">
+                                      <ion-input class="my-font" type="number" placeholder="Enter neck circum. in cm" [(ngModel)]="neck" name="neck" ></ion-input>
+                                      </ion-item>
+                                      <ion-item text-wrap no-lines class="radioBackground">
+                                        <ion-avatar item-start>
+                                          <img src="img/icons/gender.png">
+                                        </ion-avatar>
+                                        <ion-label class="my-font" style="color:#000"><b>Gender:</b></ion-label>
+                                        <ion-input class="my-font" type="text" [(ngModel)]="gen1" name="gen1" readonly></ion-input>
+                                        </ion-item>
+                                      
+                    </ion-list>
+                </div>
+              </div>
+      </ion-list>
+      <div id="ifHeighErr" style="display:none">
+        <ion-item no-lines style="background-color:#f6f6f8 !important ; color:#000">
+            <p class="my-font">Sorry, all fields are required!</p>
+        </ion-item>
+        </div>
+<ion-item text-wrap no-lines>
+      <ion-label class="my-font" style="margin-bottom: 0px;">I agree to <button ion-button clear type="button" style="text-transform: none;" class="terms" color="terms" (click)="load()">Terms and Condition</button></ion-label>
+      <ion-checkbox color="calculate" (click)="isEnable = !isEnable"></ion-checkbox>
+</ion-item>
+  <br>
+  <div text-center class="calculate-boxes" [ngClass]="{'enable': isEnable}">
+        <button ion-button color ="calculate" round style="text-transform: none;" type="submit" [disabled]="!isEnable" class="my-font">Calculate & Recommend</button>
+     </div>
+  </form>
+  </ion-content>
+  <ion-footer>
+    <div text-center style="background-color: #ffffff;">
+      <button ion-button class="my-label" clear style="text-transform: none;" color="about" (click)="about()">About BariCalc</button>
+    </div>
+  </ion-footer>

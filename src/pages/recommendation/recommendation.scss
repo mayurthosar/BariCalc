@@ -1,0 +1,203 @@
+page-recommendation {
+    .colWidth{
+        width:150px;
+      }
+       .labelWidth{
+         width:500px !important;
+       }
+      .my-label {
+        padding-top: 30px;
+        margin-bottom: 0px;
+        font-family: 'MontSerrat';
+        font-weight: bolder;
+        font-size: 20px;
+    
+      }
+      .labelText
+      {
+        font-size: 14px;
+        font-family: 'MontSerrat';
+        background-color: transparent;
+        padding-left: 10px;
+        color: dark;
+      }
+      .head{
+        font-family: 'MontserratBold';
+        font-size: 13px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+      .setIcon
+      {
+        height:40px;
+        width:40px;
+      }
+      .item-input input {
+        padding-right: 0;
+     }
+      .name{
+        font-weight: bold;
+        text-align: center;
+        font-family: 'MontSerrat';
+        font-size: 1em;
+      }
+      .heading{
+        font-family: 'MontSerrat';
+        font-size: 15px;
+        color: #fff;
+       font-weight: bold;
+      }
+      .my-font{
+        font-family: 'MontSerrat';
+        font-size: 13px;
+        font-weight: bold;
+      }
+      .value{
+          text-align:left;
+          float:left;
+      }
+      .fullscreen-image {
+        max-width: 100%;
+        max-height: 100%;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
+      .infoBlueButton
+      {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 15px;
+        color:  #1d5589 !important;
+       
+      }
+      .infoButton
+      {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 15px;
+        color: #ffffff !important;
+      }
+      .transparent {
+        background: transparent !important;
+      }
+      .image-modal {
+        width: 100% !important;
+        height: 100%;
+        top: 0 !important;
+        left: 0 !important;
+      }
+      .item-md ion-icon[item-left] + .item-inner,
+.item-md ion-icon[item-left] + .item-input,
+.item-md ion-icon[item-start] + .item-inner,
+.item-md ion-icon[item-start] + .item-input {
+  margin-left: 0px;
+}
+.label-md {
+  margin: 0px;
+}
+
+      #rounded {
+        width: 100px;
+        height: 30px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 31px;
+        border-radius: 30px;
+        margin-bottom: 0px;  
+        background-color: #ffffff;
+        border: 1px solid #222;
+        margin-left: 0px;
+      }
+      #rounds{
+        border-bottom-color:none !important;
+        -webkit-box-shadow:none !important;
+        box-shadow: none;
+      }
+      .itemDesign{
+        padding: 0px;
+        margin: 0px;
+        font-size: 14px;
+      }
+      .color-boxes {
+        display: none;
+        margin: 5px;
+        background-color:#ffffff ;
+        }
+        .show {
+          display: block !important;
+          background-color:#ffffff ;
+          }
+
+      .ion-page > ion-content{
+        position: absolute;
+        background-color: #ffffff !important;
+      }
+      // .show {
+      //   display: inline !important;
+      //   }
+        .recommend {
+            display: block !important;
+            }
+        .backroundPlace{
+            background-color: #d6d5d3;
+           
+        }
+        .rowBackground{
+          background-color: #f6f6f8 !important;
+          font-family: 'MontSerrat';
+          font-size: 10px;
+          padding-left: 0px;
+          padding-bottom: 0px;
+        }
+        .align-text{
+          padding-right:0px;
+        }
+        .line-break{
+          overflow: inherit ;
+          text-overflow: inherit ;
+          white-space: normal;
+        }
+        .item-align{
+          padding-top: 0px;  
+          padding-left: 0px;
+          padding-bottom: 0px;
+          padding-right: 0px;
+          font-size: 12px;
+          font-family: 'MontSerrat';
+          font-weight: bold;
+          overflow: inherit ;
+          text-overflow: inherit ;
+          white-space: normal;
+          
+        }
+        .my-ques {
+          font-size: 13px !important;
+          font-family: 'MontSerratBold';
+          font-weight: bolder;
+        }
+        .my-quess {
+          font-size: 12px !important;
+          font-family: 'MontSerrat';
+          font-weight: bold;
+          
+}
+        #alignme{
+          padding-top: 12px;
+          width: 50%; 
+          height: 10px;
+          font-size: 15px;
+         
+    padding-left: 15px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+  }
+  .align-items-end {
+    text-align: end;
+}
+      
+            
+}

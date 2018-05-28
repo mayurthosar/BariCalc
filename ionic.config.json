@@ -1,0 +1,8 @@
+{
+  "name": "BariCalculator",
+  "app_id": "b3a412c4",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

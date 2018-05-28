@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf');
+   
+         /* url('../fonts/calibri-webfont.svg#calibriregular') format('svg'),
+         url('../fonts/calibri-webfont.woff') format('woff'),
+         url('../fonts/calibri-webfont.ttf') format('truetype'); */
+   
+   font-weight: normal;
+   font-style: normal;
+
+} 
+@font-face {
+  font-family: 'MontserratBold';
+  
+  src: url('../fonts/Montserrat-Bold.ttf') ;
+       /* url('../fonts/calibri-webfont.svg#calibriregular') format('svg'),
+       url('../fonts/calibri-webfont.woff') format('woff'),
+       url('../fonts/calibri-webfont.ttf') format('truetype'); */
+ 
+ font-weight: normal;
+ font-style: normal;
+
+} 
+
+.ion-page > ion-content{
+  position: absolute;
+  background-color: #f6f6f8 !important;
+}
+
+.ion-page > ion-content h3{
+ color:#1d5589;
+ font-size:35px;
+ font-weight: 500;
+ font-family: Montserrat;
+}
+
+.vertical-middle{
+	position: relative; 
+	/*top: 50%;*/
+	/*-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);*/
+	background-color:#f1f1f6 !important ; 
+	/* display: inline-block; */
+ }
+
+ p.a {
+  margin: 0 30px ;
+}
+
+p.b {
+  margin: 0 30px ;
+}
+
+#main {
+  width: 50px;
+  height: 50px;
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: flex-start;
+}
+
+#content {
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: flex-end;
+}
+
+div.a {
+  position: absolute;
+  left: 150px;
+  width: 200px;
+  height: 120px;
+  
+} 
+
+div.c {
+  position: absolute;
+  left: 150px;
+  width: 200px;
+  height: 120px;
+  
+} 
